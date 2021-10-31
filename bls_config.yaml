@@ -1,4 +1,3 @@
----
 ######
 # bls_config.py
 # written by: Aaron Finocchiaro
@@ -168,3 +167,104 @@
   graph_axis_labels:
     "date" : "Date"
     "value" : "Value"
+
+
+
+
+###############################################
+
+#Section 3.4: EMPLOYMENT
+- seriesIDs:
+    - LAUCN040120000000005 #Employment, La Paz County
+    - LAUCN040270000000005 #Employment, Yuma County
+  start_year: 2019
+  end_year: 2021
+  filename: 'employment_yuma_la_paz'
+  graph_name: 'Employment in La Paz and Yuma Counties'
+  graph_type: 'line'
+  graph_axis_labels:
+    "date" : "Date"
+    "value" : "Total # Employed"
+  hovertemplate: '%{y}%'
+  sort_descending: True
+
+
+#Section 3.4: LABOR FORCE
+- seriesIDs:
+    - LAUCN040120000000006 #Labor Force, La Paz County
+    - LAUCN040270000000006 #Labor Force, Yuma County
+  start_year: 2019
+  end_year: 2021
+  filename: 'labor_force_yuma_la_paz'
+  graph_name: 'Labor Force in La Paz and Yuma Counties'
+  graph_type: 'line'
+  graph_axis_labels:
+    "date" : "Date"
+    "value" : "Total Labor Force"
+  hovertemplate: '%{y}%'
+  sort_descending: True
+
+
+#Section 3.4: PRIVATE SECTOR EMPLOYEES, YUMA
+- seriesIDs:
+    - SMU04497400500000001 #Private Sector Employees, Yuma County
+  start_year: 2000
+  end_year: 2021
+  filename: 'private_employees_yuma'
+  graph_name: 'Private Employees in Yuma County'
+  custom_column_names:
+    "SMU04497400500000001" : "Private Sector Employees"
+  graph_type: 'line'
+  graph_axis_labels:
+    "date" : "Date"
+    "value" : "Total Employees, in Thousands"
+  hovertemplate: '%{y}%'
+  sort_descending: True
+
+
+#Section 3.4: YUMA LABOR FORCE, COMPOSITE
+- seriesIDs:
+    - SMU04497403000000001 #Manufacturing
+    - SMU04497405000000001 #Information
+    - SMU04497409094000001 #Government (State & Local)
+    - SMU04497409091000001 #Government (Federal)
+    - SMU04497406500000001 #Education & Health Services
+    - SMU04497407000000001 #Lesiure & Hospitality
+    - SMU04497401500000001 #Mining, Logging, Construction
+    - SMU04497404000000001 #Trades, Transportation, Utilities
+  start_year: 2000
+  end_year: 2021
+  filename: 'yuma_composite'
+  graph_name: 'Yuma, AZ, Total Employees by Industry (in Thousands)'
+  custom_column_names:
+    "SMU04497403000000001" : "Manufacturing"
+    "SMU04497405000000001" : "Information"
+    "SMU04497409094000001" : "Government (State & Local)"
+    "SMU04497409091000001" : "Government (Federal)"
+    "SMU04497406500000001" : "Education & Health Services"
+    "SMU04497407000000001" : "Leisure & Hospitality"
+    "SMU04497401500000001" : "Mining, Logging, & Construction"
+    "SMU04497404000000001" : "Trades, Transportation, & Utilities"
+  graph_type: 'line'
+  graph_axis_labels:
+    "date" : "Date"
+    "value" : "Total Employees, in Thousands"
+  hovertemplate: '%{y}%'
+  sort_descending: True
+
+
+#Section 3.4: YUMA LABOR FORCE, COMPOSITE
+- seriesIDs:
+  - OEUM004974000000045000001
+  - OEUM004974000000045000003
+  - OEUM004974000000045000004
+  start_year: 2020
+  end_year: 2020
+  filename: 'yuma_agriculture'
+  graph_name: 'Farming, Fishing, & Forestry in Yuma County'
+  graph_type: 'bar'
+  transpose: True
+  custom_column_names:
+    "OEUM004974000000045000001" : "Total employment"
+    "OEUM004974000000045000003" : "Hourly mean wage" 
+    "OEUM004974000000045000004" : "Annual mean wage"
